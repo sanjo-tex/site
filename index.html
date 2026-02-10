@@ -1,43 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="dark">
+<html lang="pt-pt" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjotex - Excelência em Confecção</title>
+    
+    <!-- Tailwind CSS para o design -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração do Tema -->
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], }, } }
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
     </script>
+
+    <!-- Biblioteca de Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        html { scroll-behavior: smooth; }
-        .bg-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%); }
-        .dark .bg-overlay { background: linear-gradient(to top, #111111 10%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%); }
+        /* Suavizar a navegação entre secções */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Efeito de sobreposição nas imagens de fundo */
+        .bg-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%);
+        }
+        .dark .bg-overlay {
+            background: linear-gradient(to top, #111111 10%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%);
+        }
+        /* Garantir que o logo seja visível no modo claro ao fazer scroll */
+        .logo-invert {
+            filter: invert(1);
+        }
     </style>
 </head>
 <body class="antialiased transition-colors duration-500 bg-gray-50 text-zinc-900 dark:bg-[#111111] dark:text-white">
 
-    <!-- HEADER -->
+    <!-- CABEÇALHO / MENU -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <div class="w-40 flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                <!-- LOGO -->
-                <img src="imagem_fc219e.png" alt="Sanjotex" id="header-logo" class="h-10 object-contain transition-all duration-300">
+            
+            <!-- LOGO -->
+            <div class="w-40 flex-shrink-0 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <img src="imagem_fc219e.png" alt="Sanjotex Logo" id="header-logo" class="h-10 object-contain transition-all duration-300">
             </div>
 
+            <!-- NAVEGAÇÃO DESKTOP -->
             <nav class="hidden md:flex flex-1 justify-center gap-8 items-center">
-                <a href="#home" class="text-sm font-medium hover:opacity-80">Página Inicial</a>
-                <a href="#about" class="text-sm font-medium hover:opacity-80">Sobre</a>
-                <a href="#team" class="text-sm font-medium hover:opacity-80">Equipe</a>
-                <a href="#certificate" class="text-sm font-medium hover:opacity-80">Certificado</a>
-                <a href="#contact" class="text-sm font-medium hover:opacity-80">Contato</a>
+                <a href="#home" class="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity">Página Inicial</a>
+                <a href="#about" class="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity">Sobre</a>
+                <a href="#team" class="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity">Equipe</a>
+                <a href="#certificate" class="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity">Certificado</a>
+                <a href="#contact" class="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity">Contato</a>
             </nav>
 
+            <!-- BOTÕES DE ACÇÃO -->
             <div class="w-40 flex justify-end items-center gap-4">
-                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800">
+                <button onclick="toggleTheme()" class="p-2 rounded-full transition-colors hover:bg-gray-200 dark:hover:bg-zinc-800" title="Alternar Tema">
                     <i data-lucide="sun" id="theme-icon"></i>
                 </button>
                 <button class="md:hidden p-1" onclick="toggleMobileMenu()">
@@ -46,6 +74,7 @@
             </div>
         </div>
 
+        <!-- MENU PARA TELEMÓVEL -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full border-t p-6 flex flex-col gap-4 shadow-xl bg-white dark:bg-[#111111] dark:border-zinc-800 border-gray-200">
             <a href="#home" class="text-lg py-2 font-bold" onclick="toggleMobileMenu()">Página Inicial</a>
             <a href="#about" class="text-lg py-2" onclick="toggleMobileMenu()">Sobre</a>
@@ -55,180 +84,275 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- SECÇÃO PRINCIPAL (HERO) -->
     <section id="home" class="relative w-full h-screen flex items-end pb-20 md:pb-32 px-6 md:px-12 overflow-hidden bg-zinc-900">
         <div class="absolute inset-0 z-0">
-            <!-- FOTO DE FUNDO -->
-            <img src="imagem_fc255c.jpg" alt="Fábrica Sanjotex" class="w-full h-full object-cover">
+            <img src="imagem_fc255c.jpg" alt="Fachada Sanjotex" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-overlay"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
             <div class="mb-8">
-                <img src="imagem_fc219e.png" alt="Sanjotex Logo" class="h-16 md:h-20 object-contain">
+                <img src="imagem_fc219e.png" alt="Sanjotex Logo" class="h-16 md:h-24 object-contain">
             </div>
             
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6 text-white drop-shadow-xl">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6 text-white drop-shadow-2xl">
                 Excelência<br>em Confecção
             </h1>
-            <p class="text-lg md:text-xl font-medium mb-10 max-w-2xl text-gray-200 drop-shadow-md">
-                15 anos de experiência em produção têxtil de alta qualidade
+            <p class="text-lg md:text-xl font-medium mb-10 max-w-2xl text-gray-200 drop-shadow-lg">
+                15 anos de experiência em produção têxtil de alta qualidade.
             </p>
             
-            <a href="#about" class="inline-block px-8 py-3 rounded-full font-bold tracking-wider transition-all duration-300 text-sm md:text-base border bg-white text-black border-white hover:bg-gray-200 dark:bg-white dark:text-black">
+            <a href="#about" class="inline-block px-10 py-4 rounded-full font-bold tracking-wider transition-all duration-300 text-sm md:text-base border bg-white text-black border-white hover:bg-gray-200 shadow-xl">
                 CONHEÇA NOSSA HISTÓRIA
             </a>
         </div>
     </section>
 
-    <!-- SOBRE -->
-    <section id="about" class="w-full py-16 md:py-24 px-6 md:px-12 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- SECÇÃO SOBRE -->
+    <section id="about" class="w-full py-16 md:py-32 px-6 md:px-12 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
-                <h2 class="text-5xl md:text-6xl font-black uppercase leading-tight">Sobre a<br>Sanjotex</h2>
+                <h2 class="text-5xl md:text-7xl font-black uppercase leading-tight">Sobre a<br>Sanjotex</h2>
                 <div class="space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
                     <p>Somos uma microempresa especializada na prestação de serviços de costura no segmento de moda praia, atuando com foco em qualidade, responsabilidade e comprometimento em cada etapa do processo produtivo.</p>
+                    <p>Nossa missão é entregar serviços de alta qualidade, unindo técnica, cuidado e eficiência, sempre priorizando a satisfação dos nossos clientes e a valorização dos nossos colaboradores.</p>
                 </div>
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-200 dark:border-zinc-800">
-                    <div class="text-center"><span class="block text-3xl font-black">15+</span><span class="text-xs uppercase text-gray-500">Anos</span></div>
-                    <div class="text-center"><span class="block text-3xl font-black">100%</span><span class="text-xs uppercase text-gray-500">Qualidade</span></div>
-                    <div class="text-center flex flex-col items-center"><i data-lucide="star" class="w-8 h-8 mb-1 fill-current"></i><span class="text-xs uppercase text-gray-500">Certeza</span></div>
-                </div>
-            </div>
-            <div class="relative h-full min-h-[500px] w-full rounded-sm overflow-hidden group shadow-2xl">
-                <!-- FOTO SOBRE -->
-                <img src="imagem_fc2526.jpg" alt="Sanjotex Lateral" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-sm p-4 border border-white/20">
-                    <img src="imagem_fc219e.png" class="h-12 w-auto opacity-90">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- EQUIPE -->
-    <section id="team" class="w-full py-16 md:py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <h2 class="text-5xl md:text-6xl font-black uppercase mb-4">Nossa Equipe</h2>
-        </div>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
-                <!-- FOTO EQUIPE -->
-                <img src="imagem_94d7bd.jpg" alt="Equipe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
-                <div class="absolute bottom-8 left-8">
-                    <div class="flex items-center gap-3 mb-2"><i data-lucide="users" class="text-white w-6 h-6"></i><h3 class="text-2xl font-bold text-white">Equipe Sanjotex</h3></div>
-                </div>
-            </div>
-            <div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
-                <!-- FOTO PRODUÇÃO -->
-                <img src="imagem_94d764.jpg" alt="Produção" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
-                <div class="absolute bottom-8 left-8">
-                    <div class="flex items-center gap-3 mb-2"><i data-lucide="shirt" class="text-white w-6 h-6"></i><h3 class="text-2xl font-bold text-white">Produção</h3></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CERTIFICADO -->
-    <section id="certificate" class="w-full py-16 md:py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[60vh]">
-            <h2 class="text-5xl md:text-6xl font-black uppercase mb-12 text-center">Certificado</h2>
-            <div class="max-w-4xl w-full border rounded-xl p-12 text-center relative overflow-hidden shadow-2xl transition-colors bg-white border-gray-200 dark:bg-[#1a1a1a] dark:border-zinc-700">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-20"></div>
-                <div class="flex justify-center mb-6">
-                    <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center overflow-hidden border-4 border-gray-200 dark:border-zinc-600">
-                        <!-- FOTO SELO -->
-                        <img src="imagem_9fc088.jpg" alt="Selo ABVTEX" class="w-full h-full object-contain">
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-zinc-800">
+                    <div class="text-center">
+                        <span class="block text-4xl font-black">15+</span>
+                        <span class="text-xs tracking-widest text-gray-500 uppercase">Anos</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-4xl font-black">100%</span>
+                        <span class="text-xs tracking-widest text-gray-500 uppercase">Qualidade</span>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <i data-lucide="star" class="w-8 h-8 mb-1 text-yellow-500 fill-yellow-500"></i>
+                        <span class="text-xs tracking-widest text-gray-500 uppercase">Certeza</span>
                     </div>
                 </div>
-                <h3 class="text-gray-500 font-bold tracking-widest text-sm mb-2">ABVTEX</h3>
-                <h4 class="font-bold text-xl uppercase mb-6">PRATA</h4>
-                <p class="mb-10 max-w-2xl mx-auto leading-relaxed text-gray-600 dark:text-gray-400">A Sanjotex é certificada com o Selo Prata da ABVTEX.</p>
-                <button class="px-8 py-3 rounded-full font-bold tracking-wider text-sm border cursor-default bg-zinc-900 text-white dark:bg-white dark:text-black">CERTIFICAÇÃO VERIFICADA</button>
+            </div>
+
+            <div class="relative h-[500px] w-full rounded-2xl overflow-hidden group shadow-2xl">
+                <img src="imagem_fc2526.jpg" alt="Instalações Sanjotex" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             </div>
         </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contact" class="w-full py-16 md:py-24 px-6 md:px-12 pb-32">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <h2 class="text-5xl md:text-6xl font-black uppercase">Entre em Contato</h2>
+    <!-- SECÇÃO EQUIPA E PRODUÇÃO -->
+    <section id="team" class="w-full py-16 md:py-32 px-6 md:px-12 bg-zinc-100 dark:bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-5xl md:text-7xl font-black uppercase mb-6">Nossa Equipe</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">Profissionais dedicados que fazem da Sanjotex uma referência no mercado.</p>
         </div>
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="border rounded-lg p-8 h-full flex flex-col justify-between transition-colors bg-white shadow-lg border-gray-200 dark:bg-[#151515] dark:border-zinc-800">
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Equipa -->
+            <div class="group relative h-[450px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
+                <img src="imagem_94d7bd.jpg" alt="Nossa Equipa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-10 left-10">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="users" class="text-white w-8 h-8"></i>
+                        <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Equipe Sanjotex</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg">Unidos pela excelência em cada ponto.</p>
+                </div>
+            </div>
+
+            <!-- Produção -->
+            <div class="group relative h-[450px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
+                <img src="imagem_94d764.jpg" alt="Nossa Produção" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80"></div>
+                <div class="absolute bottom-10 left-10">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="shirt" class="text-white w-8 h-8"></i>
+                        <h3 class="text-3xl font-bold text-white uppercase tracking-tighter">Produção</h3>
+                    </div>
+                    <p class="text-gray-300 text-lg">Tecnologia e cuidado artesanal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO CERTIFICADO -->
+    <section id="certificate" class="w-full py-16 md:py-32 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+            <h2 class="text-5xl md:text-7xl font-black uppercase mb-16 text-center">Certificado</h2>
+            
+            <div class="w-full border rounded-3xl p-10 md:p-20 text-center relative overflow-hidden shadow-2xl transition-colors duration-500 bg-white border-gray-200 dark:bg-[#1a1a1a] dark:border-zinc-700">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-zinc-300 via-zinc-500 to-zinc-300 dark:from-zinc-700 dark:via-white dark:to-zinc-700 opacity-30"></div>
+
+                <div class="flex justify-center mb-10">
+                    <div class="w-48 h-48 rounded-full bg-white flex items-center justify-center overflow-hidden border-8 border-zinc-100 dark:border-zinc-800 shadow-inner">
+                        <img src="imagem_9fc088.jpg" alt="Selo ABVTEX Prata" class="w-full h-full object-contain p-2">
+                    </div>
+                </div>
+                
+                <h3 class="text-gray-500 font-bold tracking-[0.3em] text-sm mb-4 uppercase">ABVTEX</h3>
+                <h4 class="font-black text-3xl md:text-4xl uppercase mb-8 tracking-tight">Categoria Prata</h4>
+                <p class="mb-12 max-w-2xl mx-auto text-xl leading-relaxed text-gray-600 dark:text-gray-400">
+                    A Sanjotex é orgulhosamente certificada com o <strong>Selo Prata da ABVTEX</strong>, atestando o nosso compromisso inabalável com práticas éticas, sustentabilidade e alta qualidade na cadeia têxtil.
+                </p>
+                
+                <button class="px-10 py-4 rounded-full font-bold tracking-widest text-sm border bg-zinc-900 text-white dark:bg-white dark:text-black cursor-default hover:scale-105 transition-transform">
+                    CERTIFICAÇÃO VERIFICADA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO CONTACTO -->
+    <section id="contact" class="w-full py-16 md:py-32 px-6 md:px-12 bg-zinc-100 dark:bg-black/50">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-5xl md:text-7xl font-black uppercase">Entre em Contato</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- INFO -->
+            <div class="flex flex-col justify-between space-y-12">
+                <div class="space-y-12">
+                    <h3 class="text-3xl font-bold uppercase tracking-tighter border-b-2 border-zinc-300 dark:border-zinc-800 pb-4 inline-block">Informações</h3>
+                    
+                    <div class="space-y-10">
+                        <div class="flex gap-6 items-start">
+                            <div class="p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-lg">
+                                <i data-lucide="mail" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-gray-500 mb-1 uppercase tracking-widest">E-mail Corporativo</span>
+                                <a href="mailto:sanjotextextil@gmail.com" class="text-xl font-medium hover:underline">sanjotextextil@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 items-start">
+                            <div class="p-4 bg-white dark:bg-zinc-800 rounded-2xl shadow-lg">
+                                <i data-lucide="map-pin" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-gray-500 mb-1 uppercase tracking-widest">Endereço</span>
+                                <p class="text-xl leading-relaxed font-medium">
+                                    Rua Leopoldo Rockenbach, 360<br>Centro, São José do Inhacorá - RS<br>CEP: 98958-000
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div>
-                    <h3 class="text-xl font-bold mb-8">Informações</h3>
-                    <div class="space-y-8">
-                        <div class="flex gap-4 items-start"><i data-lucide="mail" class="w-6 h-6 mt-1"></i><div><span class="block text-xs font-bold text-gray-500 mb-1 uppercase">E-mail</span><a href="mailto:sanjotextextil@gmail.com" class="hover:opacity-70">sanjotextextil@gmail.com</a></div></div>
-                        <div class="flex gap-4 items-start"><i data-lucide="map-pin" class="w-6 h-6 mt-1"></i><div><span class="block text-xs font-bold text-gray-500 mb-1 uppercase">Endereço</span><p class="leading-relaxed">Rua Leopoldo Rockenbach, 360 - Centro<br>São José do Inhacorá - RS</p></div></div>
-                    </div>
-                </div>
-                <div class="mt-12">
-                    <span class="block text-xs font-bold text-gray-500 mb-4 uppercase">Redes Sociais</span>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/sanjotex.textil" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="https://www.instagram.com/sanjotex/" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <span class="block text-xs font-bold text-gray-500 mb-6 uppercase tracking-widest">Acompanhe-nos</span>
+                    <div class="flex gap-6">
+                        <a href="https://www.facebook.com/sanjotex.textil" target="_blank" class="w-14 h-14 rounded-2xl flex items-center justify-center transition-all bg-white dark:bg-zinc-800 shadow-xl hover:-translate-y-2 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                            <i data-lucide="facebook" class="w-7 h-7"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sanjotex/" target="_blank" class="w-14 h-14 rounded-2xl flex items-center justify-center transition-all bg-white dark:bg-zinc-800 shadow-xl hover:-translate-y-2 hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                            <i data-lucide="instagram" class="w-7 h-7"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="border rounded-lg p-8 transition-colors bg-white shadow-lg border-gray-200 dark:bg-[#151515] dark:border-zinc-800">
-                <h3 class="text-xl font-bold mb-2">Trabalhe Conosco</h3>
-                <form class="space-y-5" onsubmit="enviarEmail(event)">
-                    <div><input type="text" name="nome" placeholder="Nome" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
-                    <div><input type="email" name="email" placeholder="E-mail" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
-                    <div><input type="tel" name="telefone" placeholder="Telefone" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
-                    <div><input type="number" name="idade" placeholder="Idade" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
-                    <div><textarea name="mensagem" rows="4" placeholder="Mensagem" required class="w-full border rounded-lg px-4 py-3 outline-none resize-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></textarea></div>
-                    <button type="submit" class="w-full flex items-center justify-center gap-2 mt-4 px-8 py-3 rounded-full font-bold text-sm bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="send" class="w-4 h-4"></i> ENVIAR</button>
+
+            <!-- FORMULÁRIO -->
+            <div class="bg-white dark:bg-zinc-900 p-10 md:p-12 rounded-[40px] shadow-2xl border border-gray-100 dark:border-zinc-800">
+                <h3 class="text-3xl font-bold mb-4 uppercase tracking-tighter">Trabalhe Conosco</h3>
+                <p class="text-gray-500 text-lg mb-10">Junte-se à nossa equipe. Preencha os campos abaixo:</p>
+
+                <form class="space-y-6" onsubmit="enviarEmail(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" name="nome" placeholder="Nome Completo" required class="w-full bg-gray-50 dark:bg-zinc-800/50 border border-gray-200 dark:border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-white transition-all">
+                        <input type="email" name="email" placeholder="Seu melhor E-mail" required class="w-full bg-gray-50 dark:bg-zinc-800/50 border border-gray-200 dark:border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-white transition-all">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="tel" name="telefone" placeholder="Telemóvel / WhatsApp" class="w-full bg-gray-50 dark:bg-zinc-800/50 border border-gray-200 dark:border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-white transition-all">
+                        <input type="number" name="idade" placeholder="Sua Idade" class="w-full bg-gray-50 dark:bg-zinc-800/50 border border-gray-200 dark:border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-white transition-all">
+                    </div>
+                    <textarea name="mensagem" rows="5" placeholder="Fale um pouco sobre a sua experiência profissional..." required class="w-full bg-gray-50 dark:bg-zinc-800/50 border border-gray-200 dark:border-zinc-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-white transition-all resize-none"></textarea>
+
+                    <button type="submit" class="w-full flex items-center justify-center gap-3 mt-4 px-10 py-5 rounded-2xl font-bold text-lg bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all shadow-xl active:scale-95">
+                        <i data-lucide="send" class="w-5 h-5"></i> ENVIAR CANDIDATURA
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="w-full py-8 border-t bg-white border-gray-200 text-zinc-500 dark:bg-black dark:border-zinc-900 dark:text-zinc-600">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center gap-4">
-            <p class="text-sm">© <span id="year"></span> Sanjotex.</p>
-            <div class="text-xs font-medium tracking-wide opacity-80">EXCELÊNCIA TÊXTIL</div>
+    <!-- RODAPÉ -->
+    <footer class="w-full py-12 border-t bg-white border-gray-200 text-zinc-500 dark:bg-black dark:border-zinc-900 dark:text-zinc-600">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <p class="text-sm">© <span id="year"></span> Sanjotex. Todos os direitos reservados.</p>
+            </div>
+            <div class="text-xs font-black tracking-[0.4em] opacity-40 uppercase">Excelência Têxtil</div>
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
+        // Inicializar os ícones da biblioteca Lucide
         lucide.createIcons();
+
+        // Actualizar o ano no rodapé automaticamente
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica de Scroll para o Cabeçalho (Header)
         const header = document.getElementById('main-header');
         const headerLogo = document.getElementById('header-logo');
         const html = document.documentElement;
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
+            if (window.scrollY > 50) {
                 if (html.classList.contains('dark')) {
-                    header.classList.add('bg-[#111111]/95', 'border-b', 'border-zinc-800', 'shadow-sm', 'py-4');
-                    header.classList.remove('bg-transparent', 'py-6');
+                    header.classList.add('bg-[#111111]/95', 'border-b', 'border-zinc-800', 'shadow-2xl', 'py-4');
+                    header.classList.remove('py-6');
                 } else {
-                    header.classList.add('bg-white/95', 'border-b', 'border-gray-200', 'shadow-sm', 'py-4');
-                    header.classList.remove('bg-transparent', 'py-6');
-                    headerLogo.style.filter = "invert(1)";
+                    header.classList.add('bg-white/95', 'border-b', 'border-gray-200', 'shadow-lg', 'py-4');
+                    header.classList.remove('py-6');
+                    headerLogo.classList.add('logo-invert');
                 }
             } else {
-                header.classList.remove('bg-[#111111]/95', 'bg-white/95', 'border-b', 'border-zinc-800', 'border-gray-200', 'shadow-sm', 'py-4');
-                header.classList.add('bg-transparent', 'py-6');
-                headerLogo.style.filter = "invert(0)";
+                header.classList.remove('bg-[#111111]/95', 'bg-white/95', 'border-b', 'border-zinc-800', 'border-gray-200', 'shadow-lg', 'shadow-2xl', 'py-4');
+                header.classList.add('py-6');
+                headerLogo.classList.remove('logo-invert');
             }
         });
+
+        // Alternar entre Modo Claro e Escuro
         function toggleTheme() {
             html.classList.toggle('dark');
             const themeIcon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) { themeIcon.setAttribute('data-lucide', 'sun'); } 
-            else { themeIcon.setAttribute('data-lucide', 'moon'); }
+            
+            if (html.classList.contains('dark')) {
+                themeIcon.setAttribute('data-lucide', 'sun');
+                headerLogo.classList.remove('logo-invert');
+            } else {
+                themeIcon.setAttribute('data-lucide', 'moon');
+                if (window.scrollY > 50) headerLogo.classList.add('logo-invert');
+            }
             lucide.createIcons();
         }
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+
+        // Abrir/Fechar Menu Mobile
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Simular envio de e-mail abrindo o cliente de correio nativo
         function enviarEmail(e) {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
-            const subject = encodeURIComponent("Candidatura via Site Sanjotex: " + data.nome);
-            const body = encodeURIComponent(`Nome: ${data.nome}\nEmail: ${data.email}\nTelefone: ${data.telefone}\nIdade: ${data.idade}\n\nMensagem:\n${data.mensagem}`);
+            const subject = encodeURIComponent("Candidatura Web: " + data.nome);
+            const body = encodeURIComponent(
+                `Nova Candidatura Recebida:\n\n` +
+                `Nome: ${data.nome}\n` +
+                `E-mail: ${data.email}\n` +
+                `Telefone: ${data.telefone}\n` +
+                `Idade: ${data.idade}\n\n` +
+                `Mensagem:\n${data.mensagem}`
+            );
             window.location.href = `mailto:sanjotextextil@gmail.com?subject=${subject}&body=${body}`;
         }
     </script>
