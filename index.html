@@ -4,63 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjotex - Excelência em Confecção</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuração do Tema -->
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], }, } }
         }
     </script>
-
-    <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Overlay escuro para melhor leitura */
-        .bg-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%);
-        }
-        .dark .bg-overlay {
-            background: linear-gradient(to top, #111111 10%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%);
-        }
+        html { scroll-behavior: smooth; }
+        .bg-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%); }
+        .dark .bg-overlay { background: linear-gradient(to top, #111111 10%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%); }
     </style>
 </head>
 <body class="antialiased transition-colors duration-500 bg-gray-50 text-zinc-900 dark:bg-[#111111] dark:text-white">
 
-    <!-- CABEÇALHO -->
+    <!-- HEADER -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            
-            <!-- LOGO -->
             <div class="w-40 flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                <img src="./imagem_fc219e.png" alt="Sanjotex" id="header-logo" class="h-10 object-contain transition-all duration-300">
+                <!-- LOGO - Link Direto para o GitHub -->
+                <img src="https://sanjo-tex.github.io/site/imagem_fc219e.png" alt="Sanjotex" id="header-logo" class="h-10 object-contain transition-all duration-300">
             </div>
 
-            <!-- MENU -->
             <nav class="hidden md:flex flex-1 justify-center gap-8 items-center">
-                <a href="#home" class="text-sm font-medium tracking-wide hover:opacity-80 transition-opacity">Página Inicial</a>
-                <a href="#about" class="text-sm font-medium tracking-wide hover:opacity-80 transition-opacity">Sobre</a>
-                <a href="#team" class="text-sm font-medium tracking-wide hover:opacity-80 transition-opacity">Equipe</a>
-                <a href="#certificate" class="text-sm font-medium tracking-wide hover:opacity-80 transition-opacity">Certificado</a>
-                <a href="#contact" class="text-sm font-medium tracking-wide hover:opacity-80 transition-opacity">Contato</a>
+                <a href="#home" class="text-sm font-medium hover:opacity-80">Página Inicial</a>
+                <a href="#about" class="text-sm font-medium hover:opacity-80">Sobre</a>
+                <a href="#team" class="text-sm font-medium hover:opacity-80">Equipe</a>
+                <a href="#certificate" class="text-sm font-medium hover:opacity-80">Certificado</a>
+                <a href="#contact" class="text-sm font-medium hover:opacity-80">Contato</a>
             </nav>
 
-            <!-- ÍCONES -->
             <div class="w-40 flex justify-end items-center gap-4">
-                <button onclick="toggleTheme()" class="p-2 rounded-full transition-colors hover:bg-gray-200 dark:hover:bg-zinc-800">
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-zinc-800">
                     <i data-lucide="sun" id="theme-icon"></i>
                 </button>
                 <button class="md:hidden p-1" onclick="toggleMobileMenu()">
@@ -69,7 +46,6 @@
             </div>
         </div>
 
-        <!-- MENU MOBILE -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full border-t p-6 flex flex-col gap-4 shadow-xl bg-white dark:bg-[#111111] dark:border-zinc-800 border-gray-200">
             <a href="#home" class="text-lg py-2 font-bold" onclick="toggleMobileMenu()">Página Inicial</a>
             <a href="#about" class="text-lg py-2" onclick="toggleMobileMenu()">Sobre</a>
@@ -79,18 +55,17 @@
         </div>
     </header>
 
-    <!-- HERO (CAPA) -->
+    <!-- HERO -->
     <section id="home" class="relative w-full h-screen flex items-end pb-20 md:pb-32 px-6 md:px-12 overflow-hidden bg-zinc-900">
         <div class="absolute inset-0 z-0">
-            <!-- IMAGEM DE FUNDO -->
-            <img src="./imagem_fc255c.jpg" alt="Fábrica Sanjotex" class="w-full h-full object-cover">
+            <!-- FOTO DE FUNDO - Link Direto -->
+            <img src="https://sanjo-tex.github.io/site/imagem_fc255c.jpg" alt="Fábrica Sanjotex" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-overlay"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full">
             <div class="mb-8">
-                <!-- LOGO GRANDE -->
-                <img src="./imagem_fc219e.png" alt="Sanjotex Logo" class="h-16 md:h-20 object-contain">
+                <img src="https://sanjo-tex.github.io/site/imagem_fc219e.png" alt="Sanjotex Logo" class="h-16 md:h-20 object-contain">
             </div>
             
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6 text-white drop-shadow-xl">
@@ -106,47 +81,27 @@
         </div>
     </section>
 
-    <!-- SOBRE (TEXTOS COMPLETOS) -->
+    <!-- SOBRE -->
     <section id="about" class="w-full py-16 md:py-24 px-6 md:px-12 min-h-screen flex items-center">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-8">
-                <h2 class="text-5xl md:text-6xl font-black uppercase leading-tight">
-                    Sobre a<br>Sanjotex
-                </h2>
-                
+                <h2 class="text-5xl md:text-6xl font-black uppercase leading-tight">Sobre a<br>Sanjotex</h2>
                 <div class="space-y-6 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-                    <p>
-                        Somos uma microempresa especializada na prestação de serviços de costura no segmento de moda praia, atuando com foco em qualidade, responsabilidade e comprometimento em cada etapa do processo produtivo.
-                    </p>
-                    <p>
-                        Nossa missão é entregar serviços de alta qualidade, unindo técnica, cuidado e eficiência, sempre priorizando a satisfação de nossos clientes e a valorização de nossos colaboradores. Acreditamos que um trabalho bem-feito começa pelo respeito às pessoas e por um ambiente de trabalho ético, seguro e colaborativo.
-                    </p>
-                    <p>
-                        Buscamos ser referência no setor pela excelência na mão de obra, pelo comprometimento com prazos e pela adoção de práticas responsáveis.
-                    </p>
+                    <p>Somos uma microempresa especializada na prestação de serviços de costura no segmento de moda praia, atuando com foco em qualidade, responsabilidade e comprometimento em cada etapa do processo produtivo.</p>
+                    <p>Nossa missão é entregar serviços de alta qualidade, unindo técnica, cuidado e eficiência, sempre priorizando a satisfação de nossos clientes e a valorização de nossos colaboradores. Acreditamos que um trabalho bem-feito começa pelo respeito às pessoas e por um ambiente de trabalho ético, seguro e colaborativo.</p>
+                    <p>Buscamos ser referência no setor pela excelência na mão de obra, pelo comprometimento com prazos e pela adoção de práticas responsáveis.</p>
                 </div>
-
                 <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-200 dark:border-zinc-800">
-                    <div class="text-center">
-                        <span class="block text-3xl font-black">15+</span>
-                        <span class="text-xs tracking-widest text-gray-500 uppercase">Anos</span>
-                    </div>
-                    <div class="text-center">
-                        <span class="block text-3xl font-black">100%</span>
-                        <span class="text-xs tracking-widest text-gray-500 uppercase">Qualidade</span>
-                    </div>
-                    <div class="text-center flex flex-col items-center">
-                        <i data-lucide="star" class="w-8 h-8 mb-1 fill-current"></i>
-                        <span class="text-xs tracking-widest text-gray-500 uppercase">Certeza</span>
-                    </div>
+                    <div class="text-center"><span class="block text-3xl font-black">15+</span><span class="text-xs uppercase text-gray-500">Anos</span></div>
+                    <div class="text-center"><span class="block text-3xl font-black">100%</span><span class="text-xs uppercase text-gray-500">Qualidade</span></div>
+                    <div class="text-center flex flex-col items-center"><i data-lucide="star" class="w-8 h-8 mb-1 fill-current"></i><span class="text-xs uppercase text-gray-500">Certeza</span></div>
                 </div>
             </div>
-
             <div class="relative h-full min-h-[500px] w-full rounded-sm overflow-hidden group shadow-2xl">
-                <!-- IMAGEM LATERAL -->
-                <img src="./imagem_fc2526.jpg" alt="Sanjotex Lateral" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <!-- FOTO SOBRE - Link Direto -->
+                <img src="https://sanjo-tex.github.io/site/imagem_fc2526.jpg" alt="Sanjotex Lateral" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/30 backdrop-blur-sm p-4 border border-white/20">
-                    <img src="./imagem_fc219e.png" class="h-12 w-auto opacity-90">
+                    <img src="https://sanjo-tex.github.io/site/imagem_fc219e.png" class="h-12 w-auto opacity-90">
                 </div>
             </div>
         </div>
@@ -158,30 +113,22 @@
             <h2 class="text-5xl md:text-6xl font-black uppercase mb-4">Nossa Equipe</h2>
             <p class="text-lg text-gray-600 dark:text-gray-400">Profissionais dedicados que fazem da Sanjotex uma referência em qualidade</p>
         </div>
-
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
-                <!-- FOTO EQUIPE -->
-                <img src="./imagem_94d7bd.jpg" alt="Equipe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <!-- FOTO EQUIPE - Link Direto -->
+                <img src="https://sanjo-tex.github.io/site/imagem_94d7bd.jpg" alt="Equipe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
                 <div class="absolute bottom-8 left-8">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="users" class="text-white w-6 h-6"></i>
-                        <h3 class="text-2xl font-bold text-white">Equipe Sanjotex</h3>
-                    </div>
+                    <div class="flex items-center gap-3 mb-2"><i data-lucide="users" class="text-white w-6 h-6"></i><h3 class="text-2xl font-bold text-white">Equipe Sanjotex</h3></div>
                     <p class="text-gray-300 text-sm">Unidos pela excelência</p>
                 </div>
             </div>
-
             <div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
-                <!-- FOTO PRODUÇÃO -->
-                <img src="./imagem_94d764.jpg" alt="Produção" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <!-- FOTO PRODUÇÃO - Link Direto -->
+                <img src="https://sanjo-tex.github.io/site/imagem_94d764.jpg" alt="Produção" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90"></div>
                 <div class="absolute bottom-8 left-8">
-                    <div class="flex items-center gap-3 mb-2">
-                        <i data-lucide="shirt" class="text-white w-6 h-6"></i>
-                        <h3 class="text-2xl font-bold text-white">Produção</h3>
-                    </div>
+                    <div class="flex items-center gap-3 mb-2"><i data-lucide="shirt" class="text-white w-6 h-6"></i><h3 class="text-2xl font-bold text-white">Produção</h3></div>
                     <p class="text-gray-300 text-sm">Qualidade em cada detalhe</p>
                 </div>
             </div>
@@ -192,28 +139,19 @@
     <section id="certificate" class="w-full py-16 md:py-24 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[60vh]">
             <h2 class="text-5xl md:text-6xl font-black uppercase mb-12 text-center">Certificado</h2>
-            
             <div class="max-w-4xl w-full border rounded-xl p-12 text-center relative overflow-hidden shadow-2xl transition-colors bg-white border-gray-200 dark:bg-[#1a1a1a] dark:border-zinc-700">
-                
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-20"></div>
-
                 <div class="flex justify-center mb-6">
                     <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center overflow-hidden border-4 border-gray-200 dark:border-zinc-600">
-                        <!-- IMAGEM SELO -->
-                        <img src="./imagem_9fc088.jpg" alt="Selo ABVTEX" class="w-full h-full object-contain">
+                        <!-- FOTO SELO - Link Direto -->
+                        <img src="https://sanjo-tex.github.io/site/imagem_9fc088.jpg" alt="Selo ABVTEX" class="w-full h-full object-contain">
                     </div>
                 </div>
-                
                 <h3 class="text-gray-500 font-bold tracking-widest text-sm mb-2">ABVTEX</h3>
                 <h4 class="font-bold text-xl uppercase mb-6">PRATA</h4>
                 <h3 class="text-3xl font-black uppercase mb-4">Selo Prata ABVTEX</h3>
-                <p class="mb-10 max-w-2xl mx-auto leading-relaxed text-gray-600 dark:text-gray-400">
-                    A Sanjotex é certificada com o Selo Prata da ABVTEX, que atesta nosso compromisso com práticas éticas, sustentáveis e de qualidade em toda a cadeia produtiva têxtil.
-                </p>
-                
-                <button class="px-8 py-3 rounded-full font-bold tracking-wider text-sm border cursor-default bg-zinc-900 text-white dark:bg-white dark:text-black">
-                    CERTIFICAÇÃO VERIFICADA
-                </button>
+                <p class="mb-10 max-w-2xl mx-auto leading-relaxed text-gray-600 dark:text-gray-400">A Sanjotex é certificada com o Selo Prata da ABVTEX, que atesta nosso compromisso com práticas éticas, sustentáveis e de qualidade em toda a cadeia produtiva têxtil.</p>
+                <button class="px-8 py-3 rounded-full font-bold tracking-wider text-sm border cursor-default bg-zinc-900 text-white dark:bg-white dark:text-black">CERTIFICAÇÃO VERIFICADA</button>
             </div>
         </div>
     </section>
@@ -223,158 +161,81 @@
         <div class="max-w-7xl mx-auto text-center mb-16">
             <h2 class="text-5xl md:text-6xl font-black uppercase">Entre em Contato</h2>
         </div>
-
         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Informações -->
             <div class="border rounded-lg p-8 h-full flex flex-col justify-between transition-colors bg-white shadow-lg border-gray-200 dark:bg-[#151515] dark:border-zinc-800">
                 <div>
                     <h3 class="text-xl font-bold mb-8">Informações</h3>
                     <div class="space-y-8">
-                        <div class="flex gap-4 items-start">
-                            <i data-lucide="mail" class="w-6 h-6 mt-1"></i>
-                            <div>
-                                <span class="block text-xs font-bold text-gray-500 mb-1 uppercase">E-mail</span>
-                                <a href="mailto:sanjotextextil@gmail.com" class="hover:opacity-70">sanjotextextil@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <i data-lucide="map-pin" class="w-6 h-6 mt-1"></i>
-                            <div>
-                                <span class="block text-xs font-bold text-gray-500 mb-1 uppercase">Endereço</span>
-                                <p class="leading-relaxed">
-                                    Rua Leopoldo Rockenbach, 360 - Centro<br>
-                                    São José do Inhacorá - RS<br>
-                                    CEP: 98958-000
-                                </p>
-                            </div>
-                        </div>
+                        <div class="flex gap-4 items-start"><i data-lucide="mail" class="w-6 h-6 mt-1"></i><div><span class="block text-xs font-bold text-gray-500 mb-1 uppercase">E-mail</span><a href="mailto:sanjotextextil@gmail.com" class="hover:opacity-70">sanjotextextil@gmail.com</a></div></div>
+                        <div class="flex gap-4 items-start"><i data-lucide="map-pin" class="w-6 h-6 mt-1"></i><div><span class="block text-xs font-bold text-gray-500 mb-1 uppercase">Endereço</span><p class="leading-relaxed">Rua Leopoldo Rockenbach, 360 - Centro<br>São José do Inhacorá - RS<br>CEP: 98958-000</p></div></div>
                     </div>
                 </div>
-
                 <div class="mt-12">
                     <span class="block text-xs font-bold text-gray-500 mb-4 uppercase">Redes Sociais</span>
                     <div class="flex gap-4">
-                        <a href="https://www.facebook.com/sanjotex.textil" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sanjotex/" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
+                        <a href="https://www.facebook.com/sanjotex.textil" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="https://www.instagram.com/sanjotex/" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="instagram" class="w-5 h-5"></i></a>
                     </div>
                 </div>
             </div>
-
-            <!-- Formulário -->
             <div class="border rounded-lg p-8 transition-colors bg-white shadow-lg border-gray-200 dark:bg-[#151515] dark:border-zinc-800">
                 <h3 class="text-xl font-bold mb-2">Trabalhe Conosco</h3>
                 <p class="text-gray-500 text-sm mb-8">Quer fazer parte da equipe Sanjotex? Preencha o formulário abaixo.</p>
-
                 <form class="space-y-5" onsubmit="enviarEmail(event)">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-2">Nome Completo</label>
-                        <input type="text" name="nome" placeholder="Seu nome" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-2">E-mail</label>
-                        <input type="email" name="email" placeholder="seuemail@exemplo.com" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-2">Telefone</label>
-                        <input type="tel" name="telefone" placeholder="(00) 00000-0000" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-2">Idade</label>
-                        <input type="number" name="idade" placeholder="Sua idade" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-2">Mensagem</label>
-                        <textarea name="mensagem" rows="4" placeholder="Conte-nos sobre sua experiência..." required class="w-full border rounded-lg px-4 py-3 outline-none resize-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full flex items-center justify-center gap-2 mt-4 px-8 py-3 rounded-full font-bold tracking-wider transition-all duration-300 text-sm border bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-                        <i data-lucide="send" class="w-4 h-4"></i> ENVIAR SUA CANDIDATURA
-                    </button>
+                    <div><input type="text" name="nome" placeholder="Nome Completo" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
+                    <div><input type="email" name="email" placeholder="seuemail@exemplo.com" required class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
+                    <div><input type="tel" name="telefone" placeholder="(00) 00000-0000" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
+                    <div><input type="number" name="idade" placeholder="Sua idade" class="w-full border rounded-lg px-4 py-3 outline-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></div>
+                    <div><textarea name="mensagem" rows="4" placeholder="Conte-nos sobre sua experiência..." required class="w-full border rounded-lg px-4 py-3 outline-none resize-none bg-gray-50 border-gray-300 dark:bg-[#1a1a1a] dark:border-zinc-700 dark:text-white"></textarea></div>
+                    <button type="submit" class="w-full flex items-center justify-center gap-2 mt-4 px-8 py-3 rounded-full font-bold text-sm bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"><i data-lucide="send" class="w-4 h-4"></i> ENVIAR SUA CANDIDATURA</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="w-full py-8 border-t transition-colors bg-white border-gray-200 text-zinc-500 dark:bg-black dark:border-zinc-900 dark:text-zinc-600">
+    <footer class="w-full py-8 border-t bg-white border-gray-200 text-zinc-500 dark:bg-black dark:border-zinc-900 dark:text-zinc-600">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-sm">© <span id="year"></span> Sanjotex. Todos os direitos reservados.</p>
             <div class="text-xs font-medium tracking-wide opacity-80">EXCELÊNCIA TÊXTIL</div>
         </div>
     </footer>
 
-    <!-- LÓGICA JAVASCRIPT -->
     <script>
-        // Inicializar ícones
         lucide.createIcons();
-
-        // Ano Atual
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Lógica de Scroll e Header
         const header = document.getElementById('main-header');
         const headerLogo = document.getElementById('header-logo');
         const html = document.documentElement;
-        
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
-                // Header quando rola
                 if (html.classList.contains('dark')) {
                     header.classList.add('bg-[#111111]/95', 'border-b', 'border-zinc-800', 'shadow-sm', 'py-4');
                     header.classList.remove('bg-transparent', 'py-6');
                 } else {
                     header.classList.add('bg-white/95', 'border-b', 'border-gray-200', 'shadow-sm', 'py-4');
                     header.classList.remove('bg-transparent', 'py-6');
-                    // Inverter cor da logo no fundo branco (filtro CSS)
                     headerLogo.style.filter = "invert(1)";
                 }
             } else {
-                // Header no topo
                 header.classList.remove('bg-[#111111]/95', 'bg-white/95', 'border-b', 'border-zinc-800', 'border-gray-200', 'shadow-sm', 'py-4');
                 header.classList.add('bg-transparent', 'py-6');
                 headerLogo.style.filter = "invert(0)";
             }
         });
-
-        // Toggle Tema
-        const themeIcon = document.getElementById('theme-icon');
-        
         function toggleTheme() {
             html.classList.toggle('dark');
-            
-            // Atualizar ícone
-            if (html.classList.contains('dark')) {
-                themeIcon.setAttribute('data-lucide', 'sun');
-            } else {
-                themeIcon.setAttribute('data-lucide', 'moon');
-            }
-            lucide.createIcons(); // Recriar ícone novo
+            const themeIcon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) { themeIcon.setAttribute('data-lucide', 'sun'); } 
+            else { themeIcon.setAttribute('data-lucide', 'moon'); }
+            lucide.createIcons();
         }
-
-        // Menu Mobile
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        // Enviar Email
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
         function enviarEmail(e) {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
-            
             const subject = encodeURIComponent("Candidatura via Site Sanjotex: " + data.nome);
-            const body = encodeURIComponent(
-                `Nome: ${data.nome}\n` +
-                `Email: ${data.email}\n` +
-                `Telefone: ${data.telefone}\n` +
-                `Idade: ${data.idade}\n\n` +
-                `Mensagem:\n${data.mensagem}`
-            );
-            
+            const body = encodeURIComponent(`Nome: ${data.nome}\nEmail: ${data.email}\nTelefone: ${data.telefone}\nIdade: ${data.idade}\n\nMensagem:\n${data.mensagem}`);
             window.location.href = `mailto:sanjotextextil@gmail.com?subject=${subject}&body=${body}`;
         }
     </script>
